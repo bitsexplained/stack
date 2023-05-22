@@ -17,3 +17,9 @@ func (s *Stack) PopFromTheBack() interface{} {
 	s.list.Remove(item)
 	return item
 }
+
+func (s *Stack) Clean() {
+	for s.list.Len() > 0 {
+		s.list.Remove(s.list.Back())
+	}
+}
